@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Perú - Autenticación de Usuario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <h1>SAT - Acceso Institucional</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="section-container form-wrapper" style="max-width: 450px; margin: 3rem auto;">
+            <div class="auth-tabs">
+                <button type="button" id="tab-login" class="auth-tab active">Iniciar Sesión</button>
+                <button type="button" id="tab-register" class="auth-tab">Crear Cuenta</button>
+            </div>
+
+            <!-- FORMULARIO DE INICIO DE SESIÓN -->
+            <form id="form-login" class="sat-form">
+                <h2>Iniciar Sesión</h2>
+                <div class="form-group">
+                    <label for="login-correo">Correo Electrónico *</label>
+                    <input type="email" id="login-correo" required placeholder="correo@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Contraseña *</label>
+                    <input type="password" id="login-password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-submit animated-btn">
+                    <span>Ingresar</span>
+                </button>
+            </form>
+
+            <!-- FORMULARIO DE REGISTRO -->
+            <form id="form-register" class="sat-form" style="display: none;">
+                <h2>Crear Cuenta</h2>
+                <div class="form-group">
+                    <label for="reg-nombre">Nombre Completo *</label>
+                    <input type="text" id="reg-nombre" required placeholder="Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="reg-correo">Correo Electrónico *</label>
+                    <input type="email" id="reg-correo" required placeholder="correo@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Contraseña *</label>
+                    <input type="password" id="reg-password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-submit animated-btn">
+                    <span>Registrarse</span>
+                </button>
+            </form>
+
+            <div id="auth-msg" class="mock-alert-message" style="display: none; margin-top: 1rem;"></div>
+        </section>
+
+        <div class="form-group">
+    <label for="reg-rol">Tipo de Usuario *</label>
+    <select id="reg-rol" required style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; background: #fff;">
+        <option value="cliente">Propietario / Cliente</option>
+        <option value="empleado">Empleado</option>
+        <option value="admin">Administrador</option>
+    </select>
+</div>
+    </main>
+
+<script type="module" src="js/login.js"></script>
+</body>
+</html>

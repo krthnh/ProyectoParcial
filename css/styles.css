@@ -1,0 +1,467 @@
+/* ==========================================================================
+   ESTILOS BASE E INDEX PRINCIPAL CON MEJORAS DE CSS3
+   ========================================================================== */
+:root {
+    --primary-color: #003366;
+    --secondary-color: #0055a5;
+    --accent-color: #cc0000;
+    --alert-bg: #ffe6e6;
+    --alert-border: #ff4d4d;
+    --bg-light: #f4f6f9;
+    --text-color: #222222;
+    --border-color: #cccccc;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   ADAPTABILIDAD DE IMÁGENES
+   -------------------------------------------------------------------------- */
+.img-container {
+    width: 100%;
+    background-color: #e2e8f0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adaptive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.logo-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.hero-img-container {
+    height: 250px;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.card-img-container {
+    height: 180px;
+}
+
+.map-img-container {
+    height: 300px;
+    border-radius: 8px;
+    margin-top: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+/* --------------------------------------------------------------------------
+   EFECTO: DEGRADADO EN EL ENCABEZADO
+   -------------------------------------------------------------------------- */
+.main-header {
+    /* Degradado en el encabezado */
+    background: linear-gradient(135deg, #002244 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.brand h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.brand h1 span {
+    color: var(--accent-color);
+}
+
+.brand .tagline {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* TRANSICIÓN 3: COLOR EN EL MENÚ */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    /* Transición suave de color */
+    transition: color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: #ffcc00;
+    transform: translateY(-2px);
+}
+
+/* HERO SECTION */
+.hero-section {
+    background: linear-gradient(180deg, var(--primary-color) 0%, #001f3f 100%);
+    color: var(--white);
+    padding: 3rem 2rem;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.hero-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-content h2 { font-size: 2rem; margin-bottom: 1rem; }
+.hero-content p { font-size: 1rem; margin-bottom: 1.5rem; }
+
+.hero-buttons { display: flex; gap: 1rem; }
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary { background-color: var(--accent-color); color: var(--white); }
+.btn-secondary { background-color: var(--white); color: var(--primary-color); }
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.bg-light { background-color: var(--bg-light); }
+
+.section-title { text-align: center; margin-bottom: 2.5rem; }
+.section-title h2 { color: var(--primary-color); font-size: 1.8rem; margin-bottom: 0.5rem; }
+
+/* SERVICIOS / CARDS */
+.services-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.nav-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.card-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.card-tag { font-size: 0.75rem; color: var(--secondary-color); font-weight: bold; text-transform: uppercase; margin-bottom: 0.5rem; }
+.nav-card h3 { color: var(--primary-color); margin-bottom: 0.8rem; font-size: 1.3rem; }
+.nav-card p { font-size: 0.95rem; color: #555555; margin-bottom: 1.5rem; flex-grow: 1; }
+.card-link { font-weight: bold; color: var(--accent-color); font-size: 0.9rem; }
+
+/* PASOS */
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.step-card { background-color: var(--white); padding: 1.5rem; border-radius: 6px; border: 1px solid var(--border-color); border-top: 4px solid var(--secondary-color); }
+.step-number { display: inline-block; background-color: var(--secondary-color); color: var(--white); width: 32px; height: 32px; border-radius: 50%; line-height: 32px; text-align: center; font-weight: bold; margin-bottom: 0.75rem; }
+
+/* --------------------------------------------------------------------------
+   FORMULARIO Y EFECTO: ÍCONO SVG ANIMADO
+   -------------------------------------------------------------------------- */
+.form-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-color);
+}
+
+/* Ícono SVG Animado */
+.svg-alert-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.svg-alert-icon svg {
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.pulse-dot {
+    animation: pulseDot 1.2s infinite alternate;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes pulseDot {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; stroke-width: 3; }
+}
+
+.sat-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.form-row { display: flex; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; flex: 1; }
+.form-group label { font-weight: bold; margin-bottom: 0.3rem; font-size: 0.9rem; color: var(--primary-color); }
+.form-group input, .form-group select { padding: 0.65rem; border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.95rem; }
+
+/* TRANSICIÓN 2 Y ANIMACIÓN 2: BOTÓN DE CONSULTA ANIMADO */
+.animated-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 100%;
+    padding: 0.85rem;
+    /* Transición en el botón de consulta */
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-btn:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 85, 165, 0.3);
+}
+
+/* Confirmación animada al presionar (Active State) */
+.animated-btn:active {
+    transform: scale(0.98);
+    background-color: #001f3f;
+    animation: clickPulse 0.4s ease-out;
+}
+
+@keyframes clickPulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 85, 165, 0.7); }
+    100% { box-shadow: 0 0 0 14px rgba(0, 85, 165, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   RF-33.2: TABLA DE RESULTADOS CON ANIMACIONES Y SOMBRA
+   -------------------------------------------------------------------------- */
+/* EFECTO 1: SOMBRA EN EL BLOQUE DE RESULTADOS Y ANIMACIÓN 3: APARICIÓN PROGRESIVA */
+/* Contenedor de resultados oculto por defecto */
+.results-container {
+    display: none;
+    max-width: 900px;
+    margin: 3rem auto 0 auto;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--border-color);
+}
+
+/* Activación controlada por JavaScript */
+.results-container.active {
+    display: block;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}   
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results-header {
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.results-header h3 { color: var(--primary-color); font-size: 1.3rem; }
+.results-header p { font-size: 0.85rem; color: #666; }
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.results-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.85rem;
+    font-weight: bold;
+}
+
+.results-table td {
+    padding: 0.85rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ANIMACIÓN 1 Y TRANSICIÓN 1: FILAS VENCIDAS CON COLOR DE ALERTA */
+.row-vencida {
+    background-color: var(--alert-bg);
+    /* Transición de color en filas vencidas */
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    /* Animación de pulsación de alerta continua */
+    animation: alertPulse 1s infinite alternate;
+}
+
+.row-vencida:hover {
+    background-color: #ffcccc;
+    transform: scale(1.005);
+}
+
+@keyframes alertPulse {
+    0% { background-color: #fff0f0; }
+    100% { background-color: #ffd6d6; }
+}
+
+.row-pendiente {
+    transition: background-color 0.3s ease;
+}
+
+.row-pendiente:hover {
+    background-color: #f9f9f9;
+}
+
+/* Badges de estado */
+.status-badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status-badge.alert {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.status-badge.pending {
+    background-color: #e6b800;
+    color: #111;
+}
+
+/* CONTACTO */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.contact-info, .contact-branches { background-color: var(--white); padding: 1.5rem; border-radius: 6px; border: 1px solid var(--border-color); }
+.contact-info h3, .contact-branches h3 { color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--bg-light); padding-bottom: 0.5rem; }
+.contact-branches ul { list-style: none; }
+.contact-branches li { margin-bottom: 0.6rem; }
+
+.main-footer { background-color: #111111; color: var(--white); text-align: center; padding: 1.5rem; font-size: 0.85rem; }
+.main-footer a { color: #66a3ff; text-decoration: none; }
+
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; gap: 1rem; text-align: center; }
+    .hero-container { grid-template-columns: 1fr; }
+    .form-row { flex-direction: column; }
+}
+
+/* Estilos para <figure> y <figcaption> */
+.map-figure {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-figure .map-img-container {
+    margin-top: 0;
+}
+
+.map-figure figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: #555555;
+    font-style: italic;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   ESTILOS LOGIN Y REGISTRO
+   -------------------------------------------------------------------------- */
+.auth-tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 0.75rem;
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.auth-tab.active {
+    color: var(--primary-color, #003366);
+    border-bottom: 3px solid var(--primary-color, #003366);
+}

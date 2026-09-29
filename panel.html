@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Gestión - Reclamos Tributarios</title>
+    <link rel="stylesheet" href="css/panel.css">
+    <style>
+        .panel-container { max-width: 1200px; margin: 30px auto; padding: 20px; }
+        .header-panel { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .tabla-reclamos { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; }
+        .tabla-reclamos th, .tabla-reclamos td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        .tabla-reclamos th { background-color: #003366; color: white; }
+        .badge { padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85em; }
+        .badge-registrado { background-color: #ffeeba; color: #856404; }
+        .badge-atendido { background-color: #d4edda; color: #155724; }
+        .badge-rechazado { background-color: #f8d7da; color: #721c24; }
+        .btn-accion { padding: 6px 10px; margin-right: 5px; cursor: pointer; border: none; border-radius: 3px; }
+        .btn-editar { background-color: #ffc107; color: #000; }
+        .btn-eliminar { background-color: #dc3545; color: #fff; }
+        .btn-logout { background-color: #6c757d; color: white; padding: 8px 15px; border-radius: 4px; cursor: pointer; border: none; }
+    </style>
+</head>
+<body>
+
+    <div class="panel-container">
+        <div class="header-panel">
+            <h2>Panel de Administración de Reclamos</h2>
+            <div>
+                <span id="info-usuario">Cargando usuario...</span> | 
+                <button id="btn-cerrar-sesion" class="btn-logout">Cerrar Sesión</button>
+            </div>
+        </div>
+
+        <h3>Listado General de Reclamos</h3>
+
+        <table class="tabla-reclamos">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Propietario</th>
+                    <th>DNI</th>
+                    <th>Tipo Impuesto</th>
+                    <th>Motivo</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-cuerpo">
+                <tr>
+                    <td colspan="8">Cargando registros de la base de datos...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="module" src="js/panel-vista.js"></script>
+</body>
+</html>
